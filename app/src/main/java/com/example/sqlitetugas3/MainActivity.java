@@ -1,4 +1,4 @@
-package com.example.sqlitetugas;
+package com.example.sqlitetugas3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

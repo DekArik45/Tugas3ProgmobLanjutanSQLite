@@ -1,6 +1,6 @@
-package com.example.sqlitetugas.UpdateProductInfo;
+package com.example.sqlitetugas3.UpdateProductInfo;
 
-import com.example.sqlitetugas.pojo.Product;
+import com.example.sqlitetugas3.pojo.Product;
 
 public interface ProductUpdateListener {
     void onProductInfoUpdated(Product product, int position);

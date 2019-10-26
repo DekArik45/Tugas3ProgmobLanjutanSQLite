@@ -1,4 +1,4 @@
-package com.example.sqlitetugas.pojo;
+package com.example.sqlitetugas3.pojo;
 
 public class Product {
     private long id;

@@ -1,4 +1,4 @@
-package com.example.sqlitetugas.Util;
+package com.example.sqlitetugas3.Util;
 
 public class Config {
 

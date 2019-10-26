@@ -1,4 +1,4 @@
-package com.example.sqlitetugas;
+package com.example.sqlitetugas3;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

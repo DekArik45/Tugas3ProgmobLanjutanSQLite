@@ -1,11 +1,11 @@
-package com.example.sqlitetugas.ShowProductList;
+package com.example.sqlitetugas3.ShowProductList;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sqlitetugas.R;
+import com.example.sqlitetugas3.R;
 
 public class CustomViewHolder extends RecyclerView.ViewHolder {
 

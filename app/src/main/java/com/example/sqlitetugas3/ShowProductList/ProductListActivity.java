@@ -1,4 +1,4 @@
-package com.example.sqlitetugas.ShowProductList;
+package com.example.sqlitetugas3.ShowProductList;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,12 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.sqlitetugas.Database.DatabaseQueryClass;
-import com.example.sqlitetugas.pojo.Product;
-import com.example.sqlitetugas.CreateProduct.ProductCreateDialogFragment;
-import com.example.sqlitetugas.CreateProduct.ProductCreateListener;
-import com.example.sqlitetugas.R;
-import com.example.sqlitetugas.Util.Config;
+import com.example.sqlitetugas3.Database.DatabaseQueryClass;
+import com.example.sqlitetugas3.pojo.Product;
+import com.example.sqlitetugas3.CreateProduct.ProductCreateDialogFragment;
+import com.example.sqlitetugas3.CreateProduct.ProductCreateListener;
+import com.example.sqlitetugas3.R;
+import com.example.sqlitetugas3.Util.Config;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 

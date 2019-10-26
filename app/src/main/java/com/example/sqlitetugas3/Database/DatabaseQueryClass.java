@@ -1,4 +1,4 @@
-package com.example.sqlitetugas.Database;
+package com.example.sqlitetugas3.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.widget.Toast;
 
-import com.example.sqlitetugas.pojo.Product;
-import com.example.sqlitetugas.Util.Config;
+import com.example.sqlitetugas3.pojo.Product;
+import com.example.sqlitetugas3.Util.Config;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
