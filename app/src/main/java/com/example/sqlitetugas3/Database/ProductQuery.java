@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DatabaseQueryClass {
+public class ProductQuery {
 
     private Context context;
 
-    public DatabaseQueryClass(Context context){
+    public ProductQuery(Context context){
         this.context = context;
         Logger.addLogAdapter(new AndroidLogAdapter());
     }

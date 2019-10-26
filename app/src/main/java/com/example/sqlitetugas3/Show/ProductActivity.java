@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.ShowProductList;
+package com.example.sqlitetugas3.Show;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,10 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.sqlitetugas3.Database.DatabaseQueryClass;
+import com.example.sqlitetugas3.Adapter.ProductAdapter;
+import com.example.sqlitetugas3.Database.ProductQuery;
 import com.example.sqlitetugas3.pojo.Product;
-import com.example.sqlitetugas3.CreateProduct.ProductCreateDialogFragment;
-import com.example.sqlitetugas3.CreateProduct.ProductCreateListener;
+import com.example.sqlitetugas3.Create.ProductCreateDialogFragment;
+import com.example.sqlitetugas3.Create.ProductCreateListener;
 import com.example.sqlitetugas3.R;
 import com.example.sqlitetugas3.Util.Config;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -26,15 +27,15 @@ import com.orhanobut.logger.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductListActivity extends AppCompatActivity implements ProductCreateListener {
+public class ProductActivity extends AppCompatActivity implements ProductCreateListener {
 
-    private DatabaseQueryClass databaseQueryClass = new DatabaseQueryClass(this);
+    private ProductQuery productQuery = new ProductQuery(this);
 
     private List<Product> productList = new ArrayList<>();
 
     private TextView productListEmptyTextView;
     private RecyclerView recyclerView;
-    private ProductListRecyclerViewAdapter productListRecyclerViewAdapter;
+    private ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +48,11 @@ public class ProductListActivity extends AppCompatActivity implements ProductCre
         recyclerView = (RecyclerView) findViewById(R.id.productRecyclerView);
         productListEmptyTextView = (TextView) findViewById(R.id.emptyProductListTextView);
 
-        productList.addAll(databaseQueryClass.getAllProduct());
+        productList.addAll(productQuery.getAllProduct());
 
-        productListRecyclerViewAdapter = new ProductListRecyclerViewAdapter(this, productList);
+        productAdapter = new ProductAdapter(this, productList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(productListRecyclerViewAdapter);
+        recyclerView.setAdapter(productAdapter);
 
         viewVisibility();
 
@@ -83,10 +84,10 @@ public class ProductListActivity extends AppCompatActivity implements ProductCre
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
-                            boolean isAllDeleted = databaseQueryClass.deleteAllProducts();
+                            boolean isAllDeleted = productQuery.deleteAllProducts();
                             if(isAllDeleted){
                                 productList.clear();
-                                productListRecyclerViewAdapter.notifyDataSetChanged();
+                                productAdapter.notifyDataSetChanged();
                                 viewVisibility();
                             }
                         }
@@ -121,7 +122,7 @@ public class ProductListActivity extends AppCompatActivity implements ProductCre
     @Override
     public void onProductCreated(Product product) {
         productList.add(product);
-        productListRecyclerViewAdapter.notifyDataSetChanged();
+        productAdapter.notifyDataSetChanged();
         viewVisibility();
         Logger.d(product.getProductName());
     }

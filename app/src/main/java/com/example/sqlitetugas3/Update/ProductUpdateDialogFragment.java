@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.UpdateProductInfo;
+package com.example.sqlitetugas3.Update;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.sqlitetugas3.Database.DatabaseQueryClass;
+import com.example.sqlitetugas3.Database.ProductQuery;
 import com.example.sqlitetugas3.pojo.Product;
 import com.example.sqlitetugas3.R;
 import com.example.sqlitetugas3.Util.Config;
@@ -35,7 +35,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
     private String nameString = "", jenisString = "",merekString = "",descString = "";
     private int hargaInt = 0, qtyInt = 0;
 
-    private DatabaseQueryClass databaseQueryClass;
+    private ProductQuery productQuery;
 
     public ProductUpdateDialogFragment() {
         // Required empty public constructor
@@ -62,7 +62,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
 
         View view = inflater.inflate(R.layout.fragment_product_update_dialog, container, false);
 
-        databaseQueryClass = new DatabaseQueryClass(getContext());
+        productQuery = new ProductQuery(getContext());
 
         editProductName = view.findViewById(R.id.update_product_name);
         editProductMerek = view.findViewById(R.id.update_product_merk);
@@ -77,7 +77,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         String title = getArguments().getString(Config.TITLE);
         getDialog().setTitle(title);
 
-        mProduct = databaseQueryClass.getProductByID(idProduct);
+        mProduct = productQuery.getProductByID(idProduct);
 
         if(mProduct !=null){
             editProductName.setText(mProduct.getProductName());
@@ -104,7 +104,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
                     mProduct.setProductHarga(hargaInt);
                     mProduct.setProductQty(qtyInt);
 
-                    long id = databaseQueryClass.updateProduct(mProduct);
+                    long id = productQuery.updateProduct(mProduct);
 
                     if(id>0){
                         productUpdateListener.onProductInfoUpdated(mProduct, productItemPosition);

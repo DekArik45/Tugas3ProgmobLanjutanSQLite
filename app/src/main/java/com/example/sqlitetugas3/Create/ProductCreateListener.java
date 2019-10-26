@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.CreateProduct;
+package com.example.sqlitetugas3.Create;
 
 import com.example.sqlitetugas3.pojo.Product;
 

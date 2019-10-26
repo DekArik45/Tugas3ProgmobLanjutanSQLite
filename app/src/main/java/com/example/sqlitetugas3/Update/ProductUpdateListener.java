@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.UpdateProductInfo;
+package com.example.sqlitetugas3.Update;
 
 import com.example.sqlitetugas3.pojo.Product;
 

@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.CreateProduct;
+package com.example.sqlitetugas3.Create;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,12 +13,12 @@ import com.example.sqlitetugas3.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link CategoryProductCreateDialogFragment.OnFragmentInteractionListener} interface
+ * {@link TokoCreateDialogFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link CategoryProductCreateDialogFragment#newInstance} factory method to
+ * Use the {@link TokoCreateDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CategoryProductCreateDialogFragment extends Fragment {
+public class TokoCreateDialogFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class CategoryProductCreateDialogFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public CategoryProductCreateDialogFragment() {
+    public TokoCreateDialogFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class CategoryProductCreateDialogFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoryProductCreateDialogFragment.
+     * @return A new instance of fragment TokoCreateDialogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CategoryProductCreateDialogFragment newInstance(String param1, String param2) {
-        CategoryProductCreateDialogFragment fragment = new CategoryProductCreateDialogFragment();
+    public static TokoCreateDialogFragment newInstance(String param1, String param2) {
+        TokoCreateDialogFragment fragment = new TokoCreateDialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +65,7 @@ public class CategoryProductCreateDialogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category_product_create_dialog, container, false);
+        return inflater.inflate(R.layout.fragment_toko_create_dialog, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

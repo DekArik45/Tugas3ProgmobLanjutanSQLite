@@ -1,4 +1,4 @@
-package com.example.sqlitetugas3.CreateProduct;
+package com.example.sqlitetugas3.Create;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.sqlitetugas3.Database.DatabaseQueryClass;
+import com.example.sqlitetugas3.Database.ProductQuery;
 import com.example.sqlitetugas3.R;
 import com.example.sqlitetugas3.Util.Config;
 import com.example.sqlitetugas3.pojo.Product;
@@ -90,9 +90,9 @@ public class ProductCreateDialogFragment extends DialogFragment {
 
                 Product product = new Product(-1, nameString,merekString,descString,jenisString,hargaInt,qtyInt);
 
-                DatabaseQueryClass databaseQueryClass = new DatabaseQueryClass(getContext());
+                ProductQuery productQuery = new ProductQuery(getContext());
 
-                long id = databaseQueryClass.insertProduct(product);
+                long id = productQuery.insertProduct(product);
 
                 if(id>0){
                     product.setId(id);
