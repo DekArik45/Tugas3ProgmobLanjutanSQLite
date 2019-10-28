@@ -99,7 +99,7 @@ public class TokoAdapter extends RecyclerView.Adapter<TokoAdapter.CustomViewHold
             tokoList.remove(position);
             notifyDataSetChanged();
             ((TokoActivity) context).viewVisibility();
-            Toast.makeText(context, "Product berhasil di delete", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Toko berhasil di delete", Toast.LENGTH_LONG).show();
         } else
             Toast.makeText(context, "gagal delete, ada yang salah!", Toast.LENGTH_LONG).show();
 

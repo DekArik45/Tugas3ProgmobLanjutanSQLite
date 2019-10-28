@@ -138,11 +138,11 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
         tokoList.addAll(tokoQuery.getAllToko());
 
         ArrayList<String> label = new ArrayList<>();
-
+        int p =0;
         for (int i =0;i<tokoList.size();i++){
             label.add(tokoList.get(i).getTokoName());
             if (pegawai.getPegawaiToko().equals(tokoList.get(i).getTokoName())){
-                editToko.setSelection(i, true);
+                p=i;
             }
         }
 
@@ -150,6 +150,7 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
 
         editToko.setAdapter(adapter);
         tokoString = pegawai.getPegawaiToko();
+        editToko.setSelection(p, true);
         // mengeset listener untuk mengetahui saat item dipilih
         editToko.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -169,11 +170,12 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
         devisiList.addAll(devisiQuery.getAllDevisi());
 
         ArrayList<String> label = new ArrayList<>();
-
+        int p = 0;
         for (int i =0;i<devisiList.size();i++){
             label.add(devisiList.get(i).getDevisiName());
             if (pegawai.getPegawaiDevisi().equals(devisiList.get(i).getDevisiName())){
                 editDevisi.setSelection(i,true);
+                p=i;
             }
         }
 
@@ -181,8 +183,10 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
 
         editDevisi.setAdapter(adapter);
         devisiString = pegawai.getPegawaiDevisi();
+        editDevisi.setSelection(p,true);
         View v = editDevisi.getSelectedView();
         ((TextView)v).setTextColor(getResources().getColor(R.color.md_black_1000));
+
         // mengeset listener untuk mengetahui saat item dipilih
         editDevisi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

@@ -97,7 +97,7 @@ public class CategoryProductAdapater extends RecyclerView.Adapter<CategoryProduc
             categoryProductList.remove(position);
             notifyDataSetChanged();
             ((CategoryProductActivity) context).viewVisibility();
-            Toast.makeText(context, "Devisi berhasil di delete", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Category Product berhasil di delete", Toast.LENGTH_LONG).show();
         } else
             Toast.makeText(context, "gagal delete, ada yang salah!", Toast.LENGTH_LONG).show();
 

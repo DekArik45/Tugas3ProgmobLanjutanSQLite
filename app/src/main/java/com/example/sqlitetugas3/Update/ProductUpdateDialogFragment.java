@@ -148,11 +148,11 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         tokoList.addAll(tokoQuery.getAllToko());
 
         ArrayList<String> label = new ArrayList<>();
-
+        int p = 0;
         for (int i =0;i<tokoList.size();i++){
             label.add(tokoList.get(i).getTokoName());
             if (mProduct.getProductToko().equals(tokoList.get(i).getTokoName())){
-                editProductToko.setSelection(i,true);
+                p=i;
             }
         }
 
@@ -160,6 +160,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
 
         editProductToko.setAdapter(adapter);
         tokoString = mProduct.getProductToko();
+        editProductToko.setSelection(p,true);
         // mengeset listener untuk mengetahui saat item dipilih
         editProductToko.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -179,12 +180,11 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         categoryList.addAll(categoryProductQuery.getAllCategoryProduct());
 
         ArrayList<String> label = new ArrayList<>();
-
+        int p=0;
         for (int i =0;i<categoryList.size();i++){
             label.add(categoryList.get(i).getCategoryName());
             if (mProduct.getProductCategory().equals(categoryList.get(i).getCategoryName())){
-                editProductCategory.setSelection(i,true);
-
+                p=i;
             }
         }
 
@@ -193,9 +193,9 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         editProductCategory.setAdapter(adapter);
         categoryString = mProduct.getProductCategory();
         // mengeset listener untuk mengetahui saat item dipilih
+        editProductCategory.setSelection(p,true);
         View v = editProductCategory.getSelectedView();
         ((TextView)v).setTextColor(getResources().getColor(R.color.md_black_1000));
-
         editProductCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
