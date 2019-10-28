@@ -48,8 +48,9 @@ public class PegawaiActivity extends AppCompatActivity implements PegawaiCreateL
         setContentView(R.layout.activity_pegawai);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.pegawai_toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("Pegawai");
+        setSupportActionBar(toolbar);
+
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, toolbar);
 

@@ -43,6 +43,7 @@ public class ProductActivity extends AppCompatActivity implements ProductCreateL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.product_toolbar);
+        toolbar.setTitle("Product");
         setSupportActionBar(toolbar);
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, toolbar);

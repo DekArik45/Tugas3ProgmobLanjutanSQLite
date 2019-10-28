@@ -142,7 +142,7 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
         for (int i =0;i<tokoList.size();i++){
             label.add(tokoList.get(i).getTokoName());
             if (pegawai.getPegawaiToko().equals(tokoList.get(i).getTokoName())){
-                editToko.setSelection(i);
+                editToko.setSelection(i, true);
             }
         }
 
@@ -173,7 +173,7 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
         for (int i =0;i<devisiList.size();i++){
             label.add(devisiList.get(i).getDevisiName());
             if (pegawai.getPegawaiDevisi().equals(devisiList.get(i).getDevisiName())){
-                editDevisi.setSelection(i);
+                editDevisi.setSelection(i,true);
             }
         }
 
@@ -181,7 +181,6 @@ public class PegawaiUpdateDialogFragment extends DialogFragment {
 
         editDevisi.setAdapter(adapter);
         devisiString = pegawai.getPegawaiDevisi();
-        editDevisi.setSelection(0, true);
         View v = editDevisi.getSelectedView();
         ((TextView)v).setTextColor(getResources().getColor(R.color.md_black_1000));
         // mengeset listener untuk mengetahui saat item dipilih

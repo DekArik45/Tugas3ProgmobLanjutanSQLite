@@ -44,8 +44,9 @@ public class TokoActivity extends AppCompatActivity implements TokoCreateListene
         setContentView(R.layout.activity_toko);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toko_toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("Toko");
+        setSupportActionBar(toolbar);
+
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, toolbar);
 

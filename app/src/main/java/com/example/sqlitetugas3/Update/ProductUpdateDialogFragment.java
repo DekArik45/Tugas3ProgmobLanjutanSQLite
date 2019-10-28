@@ -152,7 +152,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         for (int i =0;i<tokoList.size();i++){
             label.add(tokoList.get(i).getTokoName());
             if (mProduct.getProductToko().equals(tokoList.get(i).getTokoName())){
-                editProductToko.setSelection(i);
+                editProductToko.setSelection(i,true);
             }
         }
 
@@ -183,7 +183,7 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         for (int i =0;i<categoryList.size();i++){
             label.add(categoryList.get(i).getCategoryName());
             if (mProduct.getProductCategory().equals(categoryList.get(i).getCategoryName())){
-                editProductCategory.setSelection(i);
+                editProductCategory.setSelection(i,true);
 
             }
         }
@@ -193,7 +193,6 @@ public class ProductUpdateDialogFragment extends DialogFragment {
         editProductCategory.setAdapter(adapter);
         categoryString = mProduct.getProductCategory();
         // mengeset listener untuk mengetahui saat item dipilih
-        editProductCategory.setSelection(0, true);
         View v = editProductCategory.getSelectedView();
         ((TextView)v).setTextColor(getResources().getColor(R.color.md_black_1000));
 

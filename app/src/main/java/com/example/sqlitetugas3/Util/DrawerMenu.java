@@ -41,7 +41,7 @@ public class DrawerMenu {
     public void createDrawer(Context context, AppCompatActivity activity, Toolbar mToolbar){
 
             nama = "Guest";
-            sub_title = "Wellcome to AllFood";
+            sub_title = "Wellcome to Tugas 3 Progmob Lanjut";
 
         // Create the AccountHeader
 

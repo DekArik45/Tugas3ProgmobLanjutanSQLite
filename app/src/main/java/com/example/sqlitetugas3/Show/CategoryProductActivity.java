@@ -45,8 +45,8 @@ public class CategoryProductActivity extends AppCompatActivity implements Catego
         setContentView(R.layout.activity_category_product);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.category_product_toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("Category Product");
+        setSupportActionBar(toolbar);
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, toolbar);
 

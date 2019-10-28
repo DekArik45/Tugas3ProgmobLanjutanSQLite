@@ -45,8 +45,9 @@ public class DevisiActivity extends AppCompatActivity implements DevisiCreateLis
         setContentView(R.layout.activity_devisi);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.devisi_toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("Devisi");
+        setSupportActionBar(toolbar);
+
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, toolbar);
 
