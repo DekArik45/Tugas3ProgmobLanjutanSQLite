@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.sqlitetugas3.Adapter.ProductAdapter;
 import com.example.sqlitetugas3.Database.ProductQuery;
+import com.example.sqlitetugas3.Util.DrawerMenu;
 import com.example.sqlitetugas3.pojo.Product;
 import com.example.sqlitetugas3.Create.ProductCreateDialogFragment;
 import com.example.sqlitetugas3.Create.ProductCreateListener;
@@ -41,12 +42,15 @@ public class ProductActivity extends AppCompatActivity implements ProductCreateL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.product_toolbar);
         setSupportActionBar(toolbar);
+        DrawerMenu drawer = new DrawerMenu();
+        drawer.createDrawer(this, this, toolbar);
+
         Logger.addLogAdapter(new AndroidLogAdapter());
 
-        recyclerView = (RecyclerView) findViewById(R.id.productRecyclerView);
-        productListEmptyTextView = (TextView) findViewById(R.id.emptyProductListTextView);
+        recyclerView = (RecyclerView) findViewById(R.id.product_rv);
+        productListEmptyTextView = (TextView) findViewById(R.id.product_empty_rv);
 
         productList.addAll(productQuery.getAllProduct());
 
@@ -56,11 +60,11 @@ public class ProductActivity extends AppCompatActivity implements ProductCreateL
 
         viewVisibility();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.product_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openStudentCreateDialog();
+                openProductCreateDialog();
             }
         });
     }
@@ -114,7 +118,7 @@ public class ProductActivity extends AppCompatActivity implements ProductCreateL
             productListEmptyTextView.setVisibility(View.GONE);
     }
 
-    private void openStudentCreateDialog() {
+    private void openProductCreateDialog() {
         ProductCreateDialogFragment productCreateDialogFragment = ProductCreateDialogFragment.newInstance("Create Product", this);
         productCreateDialogFragment.show(getSupportFragmentManager(), Config.CREATE_PRODUCT);
     }

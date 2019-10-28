@@ -12,14 +12,16 @@
         <activity android:name=".Show.CategoryProductActivity"></activity>
         <activity android:name=".Show.DevisiActivity" />
         <activity android:name=".Show.PegawaiActivity" />
-        <activity android:name=".Show.TokoActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Show.ProductActivity">
+        <activity android:name=".Show.TokoActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Show.ProductActivity">
+
         </activity>
 
         <meta-data

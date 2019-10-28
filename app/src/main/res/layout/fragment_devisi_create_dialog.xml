@@ -1,9 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Create.DevisiCreateDialogFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
 
+    <EditText
+        android:id="@+id/create_devisi_nama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nama Devisi"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/fragment_devisi_createButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Create"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_devisi_createCancelButton"
+        app:layout_constraintTop_toBottomOf="@+id/create_devisi_nama" />
+
+    <Button
+        android:id="@+id/fragment_devisi_createCancelButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cancel"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_devisi_createButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_devisi_nama" />
+
+</android.support.constraint.ConstraintLayout>

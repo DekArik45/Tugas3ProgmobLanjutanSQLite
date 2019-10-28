@@ -13,7 +13,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper databaseHelper;
 
     // All Static variables
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION =1 ;
 
     // Database Name
     private static final String DATABASE_NAME = Config.DATABASE_NAME;
@@ -37,14 +37,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Create tables SQL execution
         String CREATE_PRODUCT_TABLE = "CREATE TABLE " + Config.TABLE_PRODUCT + "("
                 + Config.COLUMN_PRODUCT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + Config.COLUMN_PRODUCT_IDTOKO + " INTEGER , "
-                + Config.COLUMN_PRODUCT_IDCATEGORYPRODUCT + " INTEGER , "
+                + Config.COLUMN_PRODUCT_TOKO + " TEXT , "
+                + Config.COLUMN_PRODUCT_CATEGORYPRODUCT + " TEXT , "
                 + Config.COLUMN_PRODUCT_NAME + " TEXT , "
-                + Config.COLUMN_PRODUCT_JENIS + " TEXT , "
                 + Config.COLUMN_PRODUCT_MERK + " TEXT , "
                 + Config.COLUMN_PRODUCT_HARGA + " INTEGER , "
                 + Config.COLUMN_PRODUCT_QTY + " INTEGER , "
-                + Config.COLUMN_PRODUCT_DESC + " TEXT"
+                + Config.COLUMN_PRODUCT_DESC + " TEXT "
                 + ");";
 
         Logger.d("Table create SQL: " + CREATE_PRODUCT_TABLE);
@@ -76,8 +75,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Create tables SQL execution
         String CREATE_PEGAWAI_TABLE = "CREATE TABLE " + Config.TABLE_PEGAWAI + "("
                 + Config.COLUMN_PEGAWAI_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + Config.COLUMN_PEGAWAI_IDTOKO + " INTEGER , "
-                + Config.COLUMN_PEGAWAI_IDDEVISI + " INTEGER , "
+                + Config.COLUMN_PEGAWAI_TOKO + " TEXT , "
+                + Config.COLUMN_PEGAWAI_DEVISI + " TEXT , "
                 + Config.COLUMN_PEGAWAI_NAME + " TEXT , "
                 + Config.COLUMN_PEGAWAI_ALAMAT + " INTEGER , "
                 + Config.COLUMN_PEGAWAI_NOTELP + " INTEGER "

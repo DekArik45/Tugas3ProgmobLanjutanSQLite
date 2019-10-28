@@ -2,40 +2,39 @@ package com.example.sqlitetugas3.Util;
 
 public class Config {
 
-    public static final String DATABASE_NAME = "db_product";
+    public static final String DATABASE_NAME = "db_toko";
 
     //column names of product table
     public static final String TABLE_PRODUCT = "tb_product";
     public static final String COLUMN_PRODUCT_ID = "_id";
-    public static final String COLUMN_PRODUCT_IDCATEGORYPRODUCT = "id_category_product";
-    public static final String COLUMN_PRODUCT_IDTOKO = "id_toko";
+    public static final String COLUMN_PRODUCT_CATEGORYPRODUCT = "category_product";
+    public static final String COLUMN_PRODUCT_TOKO = "toko";
     public static final String COLUMN_PRODUCT_NAME = "name";
-    public static final String COLUMN_PRODUCT_JENIS = "jenis_produk";
     public static final String COLUMN_PRODUCT_HARGA = "harga";
     public static final String COLUMN_PRODUCT_MERK = "merk";
     public static final String COLUMN_PRODUCT_QTY = "qty";
     public static final String COLUMN_PRODUCT_DESC = "deskripsi";
 
-    //column names of product table
+    //column names of devisi table
     public static final String TABLE_DEVISI = "tb_devisi";
     public static final String COLUMN_DEVISI_ID = "_id";
     public static final String COLUMN_DEVISI_NAME = "name";
 
-    //column names of product table
+    //column names of category product table
     public static final String TABLE_CATEGORY_PRODUCT = "tb_category_product";
     public static final String COLUMN_CATEGORY_PRODUCT_ID = "_id";
     public static final String COLUMN_CATEGORY_PRODUCT_NAME = "name";
 
-    //column names of product table
+    //column names of pegawai table
     public static final String TABLE_PEGAWAI = "tb_pegawai";
     public static final String COLUMN_PEGAWAI_ID = "_id";
-    public static final String COLUMN_PEGAWAI_IDTOKO = "id_toko";
-    public static final String COLUMN_PEGAWAI_IDDEVISI = "id_devisi";
+    public static final String COLUMN_PEGAWAI_TOKO = "toko";
+    public static final String COLUMN_PEGAWAI_DEVISI = "devisi";
     public static final String COLUMN_PEGAWAI_NAME = "name";
     public static final String COLUMN_PEGAWAI_ALAMAT = "alamat";
     public static final String COLUMN_PEGAWAI_NOTELP = "no_telp";
 
-    //column names of product table
+    //column names of toko table
     public static final String TABLE_TOKO = "tb_toko";
     public static final String COLUMN_TOKO_ID = "_id";
     public static final String COLUMN_TOKO_NAME = "name";

@@ -34,7 +34,8 @@ public class ProductQuery {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(Config.COLUMN_PRODUCT_NAME, product.getProductName());
-        contentValues.put(Config.COLUMN_PRODUCT_JENIS, product.getProductJenis());
+        contentValues.put(Config.COLUMN_PRODUCT_TOKO, product.getProductToko());
+        contentValues.put(Config.COLUMN_PRODUCT_CATEGORYPRODUCT, product.getProductCategory());
         contentValues.put(Config.COLUMN_PRODUCT_MERK, product.getProductMerk());
         contentValues.put(Config.COLUMN_PRODUCT_QTY, product.getProductQty());
         contentValues.put(Config.COLUMN_PRODUCT_HARGA, product.getProductHarga());
@@ -68,13 +69,14 @@ public class ProductQuery {
                     do {
                         int id = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_ID));
                         String name = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_NAME));
-                        String jenis = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_JENIS));
+                        String toko = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_TOKO));
+                        String categoryProduct = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_CATEGORYPRODUCT));
                         String merk = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_MERK));
                         String desc = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_DESC));
                         int harga = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_HARGA));
                         int qty = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_QTY));
 
-                        productList.add(new Product(id, name, merk,desc,jenis,harga,qty));
+                        productList.add(new Product(id, name, merk,desc,categoryProduct,toko,harga,qty));
                     }   while (cursor.moveToNext());
 
                     return productList;
@@ -108,12 +110,13 @@ public class ProductQuery {
                 int idProduct = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_ID));
                 String name = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_NAME));
                 String merk = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_MERK));
-                String jenis = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_JENIS));
+                String toko = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_TOKO));
+                String categoryProduct = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_CATEGORYPRODUCT));
                 String desc = cursor.getString(cursor.getColumnIndex(Config.COLUMN_PRODUCT_DESC));
                 int harga = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_HARGA));
                 int qty = cursor.getInt(cursor.getColumnIndex(Config.COLUMN_PRODUCT_QTY));
 
-                product = new Product(idProduct, name, merk,desc,jenis,harga,qty);
+                product = new Product(idProduct, name, merk,desc,categoryProduct,toko,harga,qty);
             }
         } catch (Exception e){
             Logger.d("Exception: " + e.getMessage());
@@ -136,7 +139,8 @@ public class ProductQuery {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Config.COLUMN_PRODUCT_NAME, product.getProductName());
         contentValues.put(Config.COLUMN_PRODUCT_MERK, product.getProductMerk());
-        contentValues.put(Config.COLUMN_PRODUCT_JENIS, product.getProductJenis());
+        contentValues.put(Config.COLUMN_PRODUCT_CATEGORYPRODUCT, product.getProductCategory());
+        contentValues.put(Config.COLUMN_PRODUCT_TOKO, product.getProductToko());
         contentValues.put(Config.COLUMN_PRODUCT_DESC, product.getProductDesc());
         contentValues.put(Config.COLUMN_PRODUCT_HARGA, product.getProductHarga());
         contentValues.put(Config.COLUMN_PRODUCT_QTY, product.getProductQty());

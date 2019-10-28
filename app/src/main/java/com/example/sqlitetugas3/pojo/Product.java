@@ -2,15 +2,16 @@ package com.example.sqlitetugas3.pojo;
 
 public class Product {
     private long id;
-    private String productName,productMerk,productDesc,productJenis;
+    private String productName,productMerk,productDesc,productCategory,productToko;
     private int productHarga,productQty;
 
-    public Product(long id, String productName, String productMerk, String productDesc, String productJenis, int productHarga, int productQty) {
+    public Product(long id, String productName, String productMerk, String productDesc, String productCategory, String productToko, int productHarga, int productQty) {
         this.id = id;
         this.productName = productName;
         this.productMerk = productMerk;
         this.productDesc = productDesc;
-        this.productJenis = productJenis;
+        this.productCategory = productCategory;
+        this.productToko = productToko;
         this.productHarga = productHarga;
         this.productQty = productQty;
     }
@@ -47,12 +48,20 @@ public class Product {
         this.productDesc = productDesc;
     }
 
-    public String getProductJenis() {
-        return productJenis;
+    public String getProductCategory() {
+        return productCategory;
     }
 
-    public void setProductJenis(String productJenis) {
-        this.productJenis = productJenis;
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
+    }
+
+    public String getProductToko() {
+        return productToko;
+    }
+
+    public void setProductToko(String productToko) {
+        this.productToko = productToko;
     }
 
     public int getProductHarga() {

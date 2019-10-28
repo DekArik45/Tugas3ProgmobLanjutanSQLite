@@ -38,7 +38,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
 
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_product, parent, false);
         return new CustomViewHolder(view);
     }
 
@@ -49,7 +49,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
 
         holder.txtName.setText(product.getProductName());
         holder.txtMerk.setText(": "+product.getProductMerk());
-        holder.txtJenis.setText(": "+product.getProductJenis());
+        holder.txtCategory.setText(": "+product.getProductCategory());
+        holder.txtToko.setText(": "+product.getProductToko());
         holder.txtDesc.setText(": "+product.getProductDesc());
         holder.txtHarga.setText(": Rp. "+String.valueOf(product.getProductHarga()));
         holder.txtQty.setText(": "+String.valueOf(product.getProductQty()));
@@ -63,7 +64,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface arg0, int arg1) {
-                                        deleteStudent(itemPosition);
+                                        deleteProduct(itemPosition);
                                     }
                                 });
 
@@ -94,7 +95,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
         });
     }
 
-    private void deleteStudent(int position) {
+    private void deleteProduct(int position) {
         Product product = productList.get(position);
         long count = productQuery.deleteProductByID(product.getId());
 
@@ -115,7 +116,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
 
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName, txtMerk, txtJenis, txtDesc,txtHarga,txtQty;
+        TextView txtName, txtMerk, txtCategory, txtDesc,txtHarga,txtQty,txtToko;
         ImageView imgDelete;
         ImageView imgEdit;
 
@@ -124,7 +125,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.CustomVi
 
             txtName = itemView.findViewById(R.id.item_product_name);
             txtMerk = itemView.findViewById(R.id.item_product_merek);
-            txtJenis = itemView.findViewById(R.id.item_product_jenis);
+            txtToko = itemView.findViewById(R.id.item_product_toko);
+            txtCategory = itemView.findViewById(R.id.item_product_category);
             txtDesc = itemView.findViewById(R.id.item_product_description);
             txtHarga = itemView.findViewById(R.id.item_product_harga);
             txtQty = itemView.findViewById(R.id.item_product_qty);

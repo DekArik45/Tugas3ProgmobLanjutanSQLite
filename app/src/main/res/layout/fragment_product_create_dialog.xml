@@ -17,24 +17,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/create_product_jenis"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Jenis Product"
-        android:inputType="text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_product_name" />
-
-    <EditText
         android:id="@+id/create_product_merk"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:hint="Product Merk"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_product_jenis" />
+        app:layout_constraintTop_toBottomOf="@+id/create_product_categoryProduct" />
 
     <EditText
         android:id="@+id/create_product_desc"
@@ -69,23 +60,61 @@
         app:layout_constraintTop_toBottomOf="@+id/create_product_merk" />
 
     <Button
-        android:id="@+id/createButton"
+        android:id="@+id/fragment_product_createButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Create"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/createCancelButton"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_product_createCancelButton"
         app:layout_constraintTop_toBottomOf="@+id/create_product_desc" />
 
     <Button
-        android:id="@+id/createCancelButton"
+        android:id="@+id/fragment_product_createCancelButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Cancel"
-        app:layout_constraintLeft_toRightOf="@+id/createButton"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_product_createButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_product_desc" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pilih Toko :"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_product_name" />
+
+    <Spinner
+        android:id="@+id/create_product_toko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Pilih Category Product :"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_product_toko" />
+
+    <Spinner
+        android:id="@+id/create_product_categoryProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
 </android.support.constraint.ConstraintLayout>

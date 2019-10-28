@@ -6,6 +6,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/PopinsTextview</item>
+        <item name="android:editTextStyle">@style/PopinsEditText</item>
+    </style>
+
+    <style name="PopinsTextview" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="PopinsEditText" parent="android:Widget.EditText">
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="PopinsButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/poppins</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

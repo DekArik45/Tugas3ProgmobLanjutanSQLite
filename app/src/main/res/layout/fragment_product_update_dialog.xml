@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
-    tools:context=".Update.ProductUpdateDialogFragment">
+    android:padding="10dp">
 
     <EditText
         android:id="@+id/update_product_name"
@@ -17,24 +16,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/update_product_jenis"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Jenis Product"
-        android:inputType="text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_product_name" />
-
-    <EditText
         android:id="@+id/update_product_merk"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:hint="Product Merk"
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_product_jenis" />
+        app:layout_constraintTop_toBottomOf="@+id/update_product_categoryProduct" />
 
     <EditText
         android:id="@+id/update_product_desc"
@@ -69,22 +59,60 @@
         app:layout_constraintTop_toBottomOf="@+id/update_product_merk" />
 
     <Button
-        android:id="@+id/updateButton"
+        android:id="@+id/fragment_product_updateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Update"
+        android:text="update"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/cancelButton"
+        app:layout_constraintRight_toLeftOf="@+id/fragment_product_updateCancelButton"
         app:layout_constraintTop_toBottomOf="@+id/update_product_desc" />
+
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/fragment_product_updateCancelButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Cancel"
-        app:layout_constraintLeft_toRightOf="@+id/updateButton"
+        app:layout_constraintLeft_toRightOf="@+id/fragment_product_updateButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_product_desc" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pilih Toko :"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_product_name" />
+
+    <Spinner
+        android:id="@+id/update_product_toko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Pilih Category Product :"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_product_toko" />
+
+    <Spinner
+        android:id="@+id/update_product_categoryProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
 </android.support.constraint.ConstraintLayout>
